@@ -1,6 +1,6 @@
 class Allergen
 
-  attr_accessor :user, :ingredient
+  attr_reader :ingredient, :user
 
   @@all = []
 
@@ -13,5 +13,5 @@ class Allergen
   def self.all
     @@all
   end
-
+  
 end
