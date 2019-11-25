@@ -30,12 +30,7 @@ class Recipe
   end
 
   def allergens
-    ingreds = self.ingredients.uniq
-    Allergen.all.map do |a|
-      if ingreds.include?(a.ingredient)
-        a.ingredient
-      end
-    end
+    users.map { |u| user.allergens }.flatten
   end
 
   def add_ingredients(ingredients)
@@ -43,7 +38,7 @@ class Recipe
   end
 
   def self.most_popular
-
+    all.max_by { |r| r.users.count }
   end
 
 end

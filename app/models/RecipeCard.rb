@@ -8,6 +8,8 @@ class RecipeCard
   def initialize(user, recipe, date, rating)
     @user = user
     @recipe = recipe
+    @date = date
+    @rating = rating
     @@all << self
   end
 

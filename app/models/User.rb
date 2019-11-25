@@ -38,7 +38,7 @@ class User
     end
 
     def most_recent_recipe
-        RecipeCard.all.select { |rc| rc.user == self}.map { |rc| rc.recipe }.last
+        recipes.all.select { |rc| rc.user == self }.map { |rc| rc.recipe }.last
     end
 
     def top_three_recipes
